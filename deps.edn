@@ -1,0 +1,13 @@
+{:deps {cljsjs/twemoji {:mvn/version "11.2.0-0"}
+        com.birdduck/hom {:mvn/version "0.2.0-SNAPSHOT"}
+        org.clojure/clojure {:mvn/version "1.10.1"}
+        org.clojure/clojurescript {:mvn/version "1.10.520"}
+        org.omcljs/om {:mvn/version "1.0.0-beta4"}}
+ :paths ["src" "resources"]
+ :aliases {:fig {:extra-deps
+                  {com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+                   com.bhauman/figwheel-main {:mvn/version "0.1.9"}}
+                 :extra-paths ["target" "test"]}
+           :build {:main-opts ["-m" "figwheel.main" "-b" "dev" "-r"]}
+           :min   {:main-opts ["-m" "figwheel.main" "-O" "advanced" "-bo" "dev"]}
+           :test  {:main-opts ["-m" "figwheel.main" "-co" "test.cljs.edn" "-m" flight-recorder.test-runner]}}}
